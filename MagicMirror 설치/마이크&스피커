@@ -1,0 +1,22 @@
+nano .asoundrc
+ nano 에디터가 실행 되었으면 아래와 같이 입력해줍니다.
+pcm.!default {
+  type asym
+  capture.pcm "mic"
+  playback.pcm "speaker"
+}
+pcm.mic {
+  type plug
+  slave {
+    pcm "hw:<card numbe,<device number>"
+  }
+}
+pcm.speaker {
+  type plug
+  slave {
+    pcm "hw:<card number>,<device number>"
+  }
+}
+
+
+https://blog.naver.com/pk3152/221391106292
